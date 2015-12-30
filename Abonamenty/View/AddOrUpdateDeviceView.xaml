@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Abonamenty.View.AddOrUpdateDeviceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Abonamenty.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Label Content="Producent:" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center"/>
+        <Label Content="Model:" HorizontalAlignment="Right"  Grid.Row="3" VerticalAlignment="Center"/>
+        <Label Content="Numer seryjny:" HorizontalAlignment="Right" Grid.Row="4" VerticalAlignment="Center"/>
+        <Label Content="Cena/dzień:" HorizontalAlignment="Right" Grid.Row="5" VerticalAlignment="Center"/>
+        <Label Content="Rodzaj:" HorizontalAlignment="Right" Grid.Row="6" VerticalAlignment="Center"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" Grid.RowSpan="1" Grid.ColumnSpan="2" Text="{Binding ManufacturerName}" VerticalAlignment="Center" Width="200" Height="25"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" Grid.RowSpan="1" Grid.ColumnSpan="2" Text="{Binding ModelName}" VerticalAlignment="Center" Width="200" Height="25"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Grid.Row="4" Grid.RowSpan="1" Grid.ColumnSpan="2" Text="{Binding SerialNumber}" VerticalAlignment="Center" Width="200" Height="25"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" Grid.RowSpan="1" Grid.ColumnSpan="2" Text="{Binding CostPerDay}" VerticalAlignment="Center" Width="200" Height="25"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Grid.Row="6" Grid.RowSpan="1" Grid.ColumnSpan="2" Text="{Binding KindOfDevice}" VerticalAlignment="Center" Width="200" Height="25"/>
+        <Button Content="Zapisz" Grid.Column="2" HorizontalAlignment="Right" Grid.Row="7" Command="{Binding SaveCommand}" VerticalAlignment="Bottom" Width="75"/>
+        <Label Content="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="5"/>
+
+
+    </Grid>
+</UserControl>

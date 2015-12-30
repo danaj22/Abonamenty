@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="Abonamenty.View.AddSubscriptionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Abonamenty.View"
+             xmlns:vm="clr-namespace:Abonamenty.ViewModel"
+             mc:Ignorable="d" d:DesignWidth="500" Height="436">
+    <Grid>
+        <Grid.DataContext>
+            <vm:AddSubscriberViewModel/>
+        </Grid.DataContext>
+
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="72,68,0,0" TextWrapping="Wrap" Text="{Binding ClientName}" VerticalAlignment="Top" Width="218"/>
+        <TextBox x:Name="Address" HorizontalAlignment="Left" Height="76" Margin="72,96,0,0" TextWrapping="Wrap" Text="{Binding Address}" VerticalAlignment="Top" Width="218"/>
+        <TextBox x:Name="Email" HorizontalAlignment="Left" Height="23" Margin="72,177,0,0" TextWrapping="Wrap" Text="{Binding Email}" VerticalAlignment="Top" Width="218"/>
+        <TextBox x:Name="NIP" HorizontalAlignment="Left" Height="23" Margin="72,205,0,0" TextWrapping="Wrap" Text="{Binding NIP}" VerticalAlignment="Top" Width="218"/>
+        <TextBox x:Name="Comment" HorizontalAlignment="Left" Height="23" Margin="72,233,0,0" TextWrapping="Wrap" Text="{Binding Comment}" VerticalAlignment="Top" Width="218"/>
+        <ComboBox x:Name="TypeOfOffer" ItemsSource="{Binding TypeOfOffer}" SelectedItem="{Binding SelectedOffer}"  HorizontalAlignment="Left" Margin="72,261,0,0" VerticalAlignment="Top" Width="218" DisplayMemberPath="name_tarriff">
+
+        </ComboBox>
+
+        <Label x:Name="NameLbl" Content="Nazwa:" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="57" Height="23"/>
+        <Label x:Name="AddressLbl" Content="Adres:" HorizontalAlignment="Left" Margin="10,96,0,0" VerticalAlignment="Top" Width="57"/>
+        <Label x:Name="EmailLbl" Content="Email:" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" Width="57"/>
+        <Label x:Name="NIPLbl" Content="NIP:" HorizontalAlignment="Left" Margin="10,202,0,0" VerticalAlignment="Top" Width="57"/>
+        <Label x:Name="CommentLbl" Content="Uwagi:" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top" Width="57"/>
+        <Label x:Name="subscriptionLbl" Content="Taryfa:" HorizontalAlignment="Left" Margin="10,257,0,0" VerticalAlignment="Top" Width="57"/>
+        <Button x:Name="button" Content="Zapisz" Command="{Binding SaveCommand}" HorizontalAlignment="Left" Margin="215,306,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label" Content="ZAPISYWANIE KLIENTA" HorizontalAlignment="Center" Padding="10"  VerticalAlignment="Top"/>
+        <Label x:Name="NameLbl_Copy" Content="Abonament:" HorizontalAlignment="Left" Margin="72,40,0,0" VerticalAlignment="Top" Width="74" Height="23"/>
+        <Label Content="{Binding SubscriptionId}" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="105" Height="23" Margin="146,40,0,0"/>
+        
+        <!--<DataGrid ItemsSource="{Binding ClientsCollection}">
+        </DataGrid>-->
+
+    </Grid>
+</UserControl>

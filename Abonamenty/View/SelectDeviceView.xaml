@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Abonamenty.View.SelectDeviceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Abonamenty.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="80"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Label Content="WYBIERZ MODEL" Grid.ColumnSpan="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <ComboBox Grid.Column="2" ItemsSource="{Binding CollectionOfDevices}" SelectedItem="{Binding SelectedDevice}" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Width="140">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat=" [{0}] {1} {2}">
+                                <Binding Path="serial_number"/>
+                                <Binding Path="manufacturer_name"/>
+                                <Binding Path="model_name"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Label Content="Urządzenie:" Grid.Column="1" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Top"/>
+        <Button x:Name="button" Content="Wybierz" Grid.Column="2" Command="{Binding SelectDeviceCommand}" HorizontalAlignment="Right" Grid.Row="3" VerticalAlignment="Bottom" Width="75"/>
+    </Grid>
+</UserControl>
